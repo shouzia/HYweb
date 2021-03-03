@@ -2,7 +2,7 @@
   <header class="Headerd-navbar px-auto">
     <div>
       <b-navbar toggleable="lg" type="dark" class="">
-        <b-navbar-brand href="#"
+        <b-navbar-brand href="#" to="/"
           ><img
             src="../assets/logo.png"
             alt="logo"
@@ -19,7 +19,6 @@
             <b-nav-item href="#">特性</b-nav-item>
             <b-nav-item href="#">文档与帮助</b-nav-item>
             <b-nav-item href="#">技术支持</b-nav-item> -->
-
             <b-nav-item
               v-for="item in Navarr"
               :key="item.Navtitle"
