@@ -14,6 +14,9 @@
 
 <script>
 import Pinlogo from "../assets/logo.png";
+import CDlinux from "../assets/CDlinux.jpg";
+import kail from "../assets/kail.svg";
+import hywifi from "../assets/hywifi.png";
 import Header from "../header/index.vue";
 export default {
   components: {
@@ -28,39 +31,41 @@ export default {
     return {
       dlApp: [
         {
-          href: "https://108878.xyz/",
+          href: "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1pin1.75.apk",
           title: "幻影Pin-v1.75",
           imgsrc: Pinlogo,
         },
         {
-          href: "https://108878.xyz/",
+          href: "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1PinLNbeta4.apk",
           title: "幻影Pin-v4.0",
           imgsrc: Pinlogo,
         },
         {
-          href: "https://108878.xyz/",
+          href: "https://xz.108878.xyz/hypin_fix2.apk",
           title: "幻影Pin-v4.2",
           imgsrc: Pinlogo,
         },
         {
-          href: "https://108878.xyz/",
+          href:
+            "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1WIFI_2.9995(%E6%94%AF%E6%8C%81%E5%AE%89%E5%8D%934-7.1).apk",
           title: "幻影Wifi-v2.995",
-          imgsrc: Pinlogo,
+          imgsrc: hywifi,
         },
         {
-          href: "https://108878.xyz/",
+          href:
+            "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1pin-magisk%E9%A9%B1%E5%8A%A8%E6%8C%82%E8%BD%BD%E6%A8%A1%E5%9D%97v2.5.zip",
           title: "幻影Magik驱动",
           imgsrc: Pinlogo,
         },
         {
-          href: "https://108878.xyz/",
+          href: "https://xz.108878.xyz/CDlinux.zip",
           title: "CDLinux",
-          imgsrc: Pinlogo,
+          imgsrc: CDlinux,
         },
         {
-          href: "https://108878.xyz/",
+          href: "https://www.kali.org/downloads/",
           title: "Kali Linux",
-          imgsrc: Pinlogo,
+          imgsrc: kail,
         },
       ],
     };

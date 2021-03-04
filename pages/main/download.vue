@@ -23,7 +23,7 @@
 
             <div class="col mx-auto button align-self-center">
               <b-button
-                class="button mb-3"
+                class="button mb-3 my-4"
                 variant="outline-light"
                 to="/download"
                 >即刻下载</b-button
