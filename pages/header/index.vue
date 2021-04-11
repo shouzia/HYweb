@@ -15,14 +15,10 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <!-- <b-nav-item href="#">下载</b-nav-item>
-            <b-nav-item href="#">特性</b-nav-item>
-            <b-nav-item href="#">文档与帮助</b-nav-item>
-            <b-nav-item href="#">技术支持</b-nav-item> -->
             <b-nav-item
               v-for="item in Navarr"
               :key="item.Navtitle"
-              :href="item.Navhref"
+              v-scroll-to="item.Navhref"
               >{{ item.Navtitle }}</b-nav-item
             >
           </b-navbar-nav>
@@ -43,20 +39,6 @@ export default {
         { Navtitle: "技术支持", Navhref: "#Technical" },
       ],
     };
-  },
-
-  methods: {
-    jump(index) {
-      let jump = document.querySelectorAll(".d_jump");
-      // 获取需要滚动的距离
-      let total = jump[index].offsetTop;
-      // Chrome
-      document.body.scrollTop = total;
-      // Firefox
-      document.documentElement.scrollTop = total;
-      // Safari
-      window.pageYOffset = total;
-    },
   },
 };
 </script>

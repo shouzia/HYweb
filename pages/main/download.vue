@@ -8,25 +8,12 @@
             <p>幻影Pin是一款通过跑Pin绕过密码输入的Wifi破解软件。</p>
           </div>
           <div class="row text-center">
-            <!-- <div
-              class="col mx-auto button"
-              v-for="item in dlApp"
-              :key="item.title"
-            >
-              <b-button
-                class="button mb-3"
-                variant="outline-light"
-                @click="download(item.href)"
-                >{{ item.title }}</b-button
-              >
-            </div> -->
-
             <div class="col mx-auto button align-self-center">
               <b-button
-                class="button mb-3 my-4"
+                class="button mb-3 my-4 link-down"
                 variant="outline-light"
                 to="/download"
-                >即刻下载</b-button
+                ><p>即刻下载</p></b-button
               >
             </div>
           </div>
@@ -54,6 +41,13 @@ export default {
 }
 .text-color {
   color: white;
+}
+.link-down {
+  height: 40px;
+}
+.link-down p {
+  line-height: 40px;
+  margin: 0;
 }
 </style>
 

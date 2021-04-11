@@ -1,5 +1,5 @@
 <template>
-  <div id="Technical" class="my-4 max-docs mx-auto px-4">
+  <div id="Technical" ref="example" class="my-4 max-docs mx-auto px-4">
     <h2 class="text-font">技术支持</h2>
     <br />
     <p>
@@ -15,7 +15,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    console.log("--------------------");
+    console.log(this.$refs);
+  },
+};
 </script>
 
 <style>
