@@ -16,6 +16,12 @@
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
             <b-nav-item
+              v-for="item in ToNavLink"
+              :key="item.Navtitle"
+              :to="item.Navhref"
+              >{{ item.Navtitle }}</b-nav-item
+            >
+            <b-nav-item
               v-for="item in Navarr"
               :key="item.Navtitle"
               v-scroll-to="item.Navhref"
@@ -38,6 +44,7 @@ export default {
         { Navtitle: "文档与技术", Navhref: "#Docs" },
         { Navtitle: "技术支持", Navhref: "#Technical" },
       ],
+      ToNavLink: [{ Navtitle: "首页", Navhref: "/" }],
     };
   },
 };
