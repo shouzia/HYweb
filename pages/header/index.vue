@@ -24,7 +24,10 @@
             <b-nav-item
               v-for="item in Navarr"
               :key="item.Navtitle"
-              v-scroll-to="item.Navhref"
+              v-scroll-to="{
+                el: item.Navhref,
+                offset: -280,
+              }"
               >{{ item.Navtitle }}</b-nav-item
             >
           </b-navbar-nav>
