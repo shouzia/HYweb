@@ -5,7 +5,7 @@
         HYTEAM 2015-{{ new Date().getFullYear() }}
       </div>
       <div class="col text-right">
-        <a href="https://beian.miit.gov.cn/">浙ICP备19018912号-2</a>
+        <!-- <a href="https://beian.miit.gov.cn/">浙ICP备19018912号-2</a> -->
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@ export default {};
 <style>
 .footer {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   bottom: 0;
   z-index: 1071;
   min-height: 25px;

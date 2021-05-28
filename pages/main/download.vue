@@ -2,7 +2,7 @@
   <section id="Download" class="bg animated fadeInDownBig">
     <div class="py-3">
       <div class="m-auto max row">
-        <div class="col my-auto  animated fadeInLeft">
+        <div class="col my-auto  animated fadeIn">
           <div class="my-4 text-color">
             <h2>幻影科技</h2>
             <p>幻影Pin是一款通过跑Pin绕过密码输入的Wifi破解软件。</p>
@@ -18,7 +18,7 @@
             </div>
           </div>
         </div>
-        <div class="col text-center align-self-center animated fadeInRight">
+        <div class="col text-center align-self-center animated fadeIn">
           <img src="../assets/logo.png" alt="" width="200px" height="200px" />
         </div>
       </div>

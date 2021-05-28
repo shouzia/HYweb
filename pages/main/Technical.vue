@@ -1,5 +1,5 @@
 <template>
-  <div id="Technical" ref="example" class="my-4 max-docs mx-auto px-4 animated fadeInRight">
+  <div id="Technical" ref="example" class="my-4 max-docs mx-auto px-4 animated fadeIn">
     <h2 class="text-font">技术支持</h2>
     <br />
     <p>
