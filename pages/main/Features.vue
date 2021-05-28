@@ -1,5 +1,5 @@
 <template>
-  <div id="Features">
+  <div id="Features" class=" animated fadeInUp">
     <div class="row max mx-auto my-3">
       <div
         class="col text-center px-5"

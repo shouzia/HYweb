@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="container">
+    <div class="container animated bounceIn">
       <div class="box text-center" v-for="item in dlApp" :key="item.title">
         <div class="img" @click="download(item.href)">
           <img :src="item.imgsrc" alt="" />
@@ -49,6 +49,12 @@ export default {
           href:
             "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1WIFI_2.9995(%E6%94%AF%E6%8C%81%E5%AE%89%E5%8D%934-7.1).apk",
           title: "幻影Wifi-v2.995",
+          imgsrc: hywifi,
+        },
+        {
+          href:
+            "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1Wifi(%E9%80%82%E9%85%8D%E5%AE%89%E5%8D%938.0%E4%BB%A5%E4%B8%8A).apk",
+          title: "幻影Wifi(安卓8.0以上)",
           imgsrc: hywifi,
         },
         {
