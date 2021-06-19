@@ -8,6 +8,9 @@ export default {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { name: 'Keywords', content: '幻影Pin官网,幻影官网，幻影WiFi,WiFi破解，幻影WiFi下载，幻影Pin下载' },
+            { name: 'Keywords', content: '幻影WiFi - 真正无需网络让你免费连WiFi的神器！幻影wifi官网，幻影wifi最新版下载地址~幻影pin官网,幻影pin下载' },
+            { name: 'Keywords', content: '幻影wifi,幻影wifi官网,幻影pin,幻影pin官网,幻影wifi3.0,幻影wifiios版,幻影wifi苹果版,幻影wifi-pin,wifi破解' },
             { hid: 'description', name: 'description', content: '' }
         ],
         link: [
