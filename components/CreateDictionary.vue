@@ -10,11 +10,11 @@
         {{ item.name }}
       </option>
     </select>
-    <select v-model="county">
+    <!-- <select v-model="county">
       <option v-for="item in countyArr" :key="item.name" :value="item.name">
         {{ item.name }}
       </option>
-    </select>
+    </select> -->
     <button @click="BtnClick()">生成</button>
     <!-- 生成字典 -->
   </div>
