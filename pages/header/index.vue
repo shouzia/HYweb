@@ -2,7 +2,7 @@
   <header class="Headerd-navbar px-auto">
     <div>
       <b-navbar toggleable="lg" type="dark" class="">
-        <b-navbar-brand href="#" to="/"
+        <b-navbar-brand href="/" to="/"
           ><img
             src="../assets/logo.png"
             alt="logo"

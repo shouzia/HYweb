@@ -1,18 +1,18 @@
 <template>
   <div id="HYpage">
     <!-- NavBar -->
-    <!-- <Header /> -->
+    <Header />
     <main>
       <!-- 下载 -->
-      <!-- <Download /> -->
+      <Download />
       <!-- 特性 -->
-      <!-- <Features /> -->
-      <!-- <Docs /> -->
+      <Features />
+      <Docs />
 
-      <!-- <Technical /> -->
+      <Technical />
     </main>
-    <!-- <Footer /> -->
-    <CreateDictionary />
+    <Footer />
+    <!-- <CreateDictionary /> -->
   </div>
 </template>
 
