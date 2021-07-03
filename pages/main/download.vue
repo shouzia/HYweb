@@ -1,7 +1,7 @@
 <template>
-  <section id="Download" class="bg animated fadeInDownBig">
+  <section id="Download" class="bg firstbg animated fadeInDownBig">
     <div class="py-3">
-      <div class="m-auto max row">
+      <div class="max row">
         <div class="col my-auto animated fadeIn">
           <div class="my-4 text-color">
             <h2>幻影科技</h2>
@@ -44,6 +44,22 @@ export default {
 .max {
   max-width: 1500px;
   min-height: 40vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+@media screen and (max-width: 480px) {
+  .firstbg {
+    min-height: 90vh;
+  }
+  .max {
+    max-width: 1500px;
+    min-height: 40vh;
+    justify-content: center;
+    align-items: center;
+    margin: 20% 0%;
+  }
 }
 .text-color {
   color: white;

@@ -1,6 +1,7 @@
-<template lang="en">
+<template>
   <div class="Dictionary">
-    <Header/>
+    <Header />
+
     <!-- <select v-model="county">
       <option v-for="item in countyArr" :key="item.name" :value="item.name">
         {{ item.name }}
@@ -22,8 +23,14 @@
     </div> -->
 
     <!-- <hr /> -->
-    <div class="col-ls-6 col-sm-8 mx-auto text-center mt-5" style="height:20%" >
-      <div class="row" style="height:100%  ;justify-content: center;align-items: center;" >
+    <div
+      class="col-ls-6 col-sm-8 mx-auto text-center mt-5"
+      style="min-height: 20%"
+    >
+      <div
+        class="row"
+        style="height: 100%; justify-content: center; align-items: center"
+      >
         <div class="col-lg-6 col-md-6 col-sm-9 text-center mx-auto">
           <b-input-group class="mx-auto Prefix" size="md" prepend="前缀:">
             <b-form-input autocomplete="off" v-model="Prefix"></b-form-input>
@@ -36,26 +43,47 @@
         <div class="col-lg-6 col-md-6 col-sm-9 text-center mx-auto">
           预先显示
           <br />
-          {{ Prefix + suffix }}
+          <p v-show="Prefixflag">
+            {{ Lastfix + "0000" }}<br />
+            {{ Lastfix + "0001" }}<br />
+            {{ Lastfix + "0002" }}<br />
+            {{ Lastfix + "9998" }}<br />
+            {{ Lastfix + "9999" }}<br />
+          </p>
+          <p v-show="suffixflag">
+            {{ "0000" + Lastfix }}<br />
+            {{ "0001" + Lastfix }}<br />
+            {{ "0002" + Lastfix }}<br />
+            {{ "9998" + Lastfix }}<br />
+            {{ "9999" + Lastfix }}<br />
+          </p>
         </div>
       </div>
     </div>
     <hr />
     <div class="col-ls-6 col-sm-10 mx-auto text-center">
       <b-input-group
-        class="mx-auto  col-sm-10 col-md-8 col-lg-8"
+        class="mx-auto col-sm-10 col-md-8 col-lg-8"
         size="md"
         prepend="文件名:"
         append=".txt"
       >
         <b-form-input v-model="title" autocomplete="off"></b-form-input>
       </b-input-group>
-      <b-button class="CreateBtn mt-4 col-sm-10 col-md-8 col-lg-8" @click="BtnClick()">生成</b-button>
+      <b-button
+        class="CreateBtn mt-4 col-sm-10 col-md-8 col-lg-8"
+        @click="BtnClick()"
+        >生成</b-button
+      >
+      <b-progress
+        class="mt-4"
+        :value="progressValue"
+        variant="success"
+      ></b-progress>
     </div>
     <!-- 生成字典 -->
-
-    <b-modal id="bv-modal-example"  hide-footer>
-      <template #modal-title class="modal-dialog-centered "> 出现错误 </template>
+    <b-modal id="bv-modal-example" hide-footer>
+      <template #modal-title class="modal-dialog-centered"> 出现错误 </template>
       <div class="d-block text-center">
         <h3>字典最小长度不能低于8</h3>
       </div>
@@ -77,7 +105,10 @@ export default {
   data() {
     return {
       Prefix: "", //前缀
+      Prefixflag: true,
       suffix: "", //后缀
+      suffixflag: false,
+      Lastfix: "",
       createPassword: "",
       title: "",
       DictionaryIndex: 1,
@@ -87,34 +118,122 @@ export default {
       arr: arrAll, // 所有城市的数据，已经在items.js里面定义了
       cityArr: [],
       countyArr: [],
-      password: "value\r\ntest",
+      password: "",
+      progressValue: 0,
+      timer: "",
     };
   },
 
   watch: {
     Prefix(nval, oval) {
-      // console.log(nval, oval);
+      // console.log(nval, oval);          this.Lastfix = this.Prefix;
+      this.Lastfix = this.Prefix;
+      this.suffixflag = false;
+      this.Prefixflag = true;
       this.createPassword = nval + this.suffix;
     },
     suffix(nval, oval) {
+      this.Lastfix = this.suffix;
       // console.log(nval, oval);
-      this.createPassword = this.Prefix + nval;
+      this.Prefixflag = false;
+      this.suffixflag = true;
+    },
+    createPassword(nval) {
+      if (this.Prefix || this.suffix) {
+        if (this.Prefix) {
+          // this.Lastfix = this.Prefix;
+        }
+        if (this.suffix) {
+          // this.Lastfix = this.suffix;
+        }
+      } else {
+        // alert("你必须输入4个字符的前缀或后缀");
+      }
     },
   },
   methods: {
     BtnClick() {
-      let link = new Blob([this.password], {
-        type: "text/plain;charset=utf-8",
-      });
-      if (this.createPassword.length < 8) {
+      if (this.Lastfix.length < 4) {
         this.$bvModal.show("bv-modal-example");
       } else {
+        this.createPrefix();
+        this.SetTimer();
+        let link = new Blob([this.password], {
+          type: "text/plain;charset=utf-8",
+        });
         if (this.title) {
           saveAs(link, this.title);
         } else {
           saveAs(link, "新建字典" + this.DictionaryIndex);
           this.DictionaryIndex++;
         }
+      }
+    },
+
+    createPrefix() {
+      this.password = "";
+      if (this.Prefixflag) {
+        for (let i = 0; i <= 9999; i++) {
+          if (i < 10) {
+            let a = "000";
+            let b = a + i + "\r\n";
+            let c = this.Lastfix + b;
+            this.password += c;
+          }
+          if (i > 9 && i < 100) {
+            let a = "00";
+            let b = a + i + "\r\n";
+            let c = this.Lastfix + b;
+            this.password += c;
+          }
+          if (i > 99 && i < 1000) {
+            let a = "0";
+            let b = a + i + "\r\n";
+            let c = this.Lastfix + b;
+            this.password += c;
+          }
+          if (i >= 999) {
+            let b = i + "\r\n";
+            let c = this.Lastfix + b;
+            this.password += c;
+          }
+        }
+      } else {
+        for (let i = 0; i <= 9999; i++) {
+          if (i < 10) {
+            let a = "000";
+            let b = a + i;
+            let c = b + this.Lastfix + "\r\n";
+            this.password += c;
+          }
+          if (i > 9 && i < 100) {
+            let a = "00";
+            let b = a + i;
+            let c = b + this.Lastfix + "\r\n";
+            this.password += c;
+          }
+          if (i > 99 && i < 1000) {
+            let a = "0";
+            let b = a + i;
+            let c = b + this.Lastfix + "\r\n";
+            this.password += c;
+          }
+          if (i >= 999) {
+            let b = i;
+            let c = b + this.Lastfix + "\r\n";
+            this.password += c;
+          }
+        }
+      }
+    },
+
+    SetTimer() {
+      this.progressValue = 0;
+      this.timer = setInterval(() => {
+        this.progressValue += 1;
+      }, 100);
+      if (this.progressValue >= 100) {
+        clearInterval(this.timer);
       }
     },
     getCity() {
