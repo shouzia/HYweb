@@ -15,12 +15,6 @@
                 to="/download"
                 ><p>即刻下载</p></b-button
               >
-              <b-button
-                class="button mb-3 my-4 link-down mx-2"
-                variant="outline-light"
-                to="/CreateDictionary"
-                ><p>字典生成</p></b-button
-              >
             </div>
           </div>
         </div>
@@ -35,9 +29,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {}
   },
-};
+}
 </script>
 
 <style>

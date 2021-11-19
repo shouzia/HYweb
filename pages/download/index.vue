@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="container animated bounceIn" ref="DownloadPage">
+    <div class="container animated fadeIn" ref="DownloadPage">
       <div class="box text-center" v-for="item in dlApp" :key="item.title">
         <div class="img" @click="download(item.href)">
           <img :src="item.imgsrc" alt="" />
@@ -13,67 +13,78 @@
 </template>
 
 <script>
-import Pinlogo from "../assets/logo.png";
-import CDlinux from "../assets/CDlinux.jpg";
-import kail from "../assets/kail.svg";
-import hywifi from "../assets/hywifi.png";
-import Header from "../header/index.vue";
+import Pinlogo from '../assets/logo.png'
+import CDlinux from '../assets/CDlinux.jpg'
+import kail from '../assets/kail.svg'
+import hywifi from '../assets/hywifi.png'
+import Shouzi from '../assets/shouzi.jpg'
+import Header from '../header/index.vue'
 export default {
   components: {
     Header,
   },
   methods: {
     download: function (url) {
-      window.location.href = url;
+      window.location.href = url
     },
   },
   data() {
     return {
       dlApp: [
         {
-          href: "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1pin1.75.apk",
-          title: "幻影Pin-v1.75",
+          href: 'https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1pin1.75.apk',
+          title: '幻影Pin-v1.75',
           imgsrc: Pinlogo,
         },
         {
-          href: "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1PinLNbeta4.apk",
-          title: "幻影Pin-v4.0",
+          href: 'https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1PinLNbeta4.apk',
+          title: '幻影Pin-v4.0',
           imgsrc: Pinlogo,
         },
         {
-          href: "https://xz.108878.xyz/hypin_fix2.apk",
-          title: "幻影Pin-v4.2",
+          href: 'https://xz.108878.xyz/hypin_fix2.apk',
+          title: '幻影Pin-v4.2',
           imgsrc: Pinlogo,
         },
         {
-          href: "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1WIFI_2.9995(%E6%94%AF%E6%8C%81%E5%AE%89%E5%8D%934-7.1).apk",
-          title: "幻影Wifi-v2.995",
+          href: 'https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1WIFI_2.9995(%E6%94%AF%E6%8C%81%E5%AE%89%E5%8D%934-7.1).apk',
+          title: '幻影Wifi-v2.995',
           imgsrc: hywifi,
         },
         {
-          href: "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1Wifi(%E9%80%82%E9%85%8D%E5%AE%89%E5%8D%938.0%E4%BB%A5%E4%B8%8A).apk",
-          title: "幻影Wifi(安卓8.0以上)",
+          href: 'https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1Wifi(%E9%80%82%E9%85%8D%E5%AE%89%E5%8D%938.0%E4%BB%A5%E4%B8%8A).apk',
+          title: '幻影Wifi(安卓8.0以上)',
           imgsrc: hywifi,
         },
         {
-          href: "https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1pin-magisk%E9%A9%B1%E5%8A%A8%E6%8C%82%E8%BD%BD%E6%A8%A1%E5%9D%97v2.5.zip",
-          title: "幻影Magik驱动",
+          href: 'https://xz.108878.xyz/%E5%B9%BB%E5%BD%B1pin-magisk%E9%A9%B1%E5%8A%A8%E6%8C%82%E8%BD%BD%E6%A8%A1%E5%9D%97v2.5.zip',
+          title: '幻影Magik驱动',
           imgsrc: Pinlogo,
         },
         {
-          href: "https://xz.108878.xyz/CDlinux.zip",
-          title: "CDLinux",
+          href: 'https://h5ai.shouzi.xyz',
+          title: '驱动及其他文件',
+          imgsrc: Pinlogo,
+        },
+        {
+          href: 'https://log.shouzi.xyz/index.php/2021/08/18/cdlinuxcrackwifi/',
+          title: 'CDLinux使用方法',
+          imgsrc: Shouzi,
+        },
+        {
+          href: 'https://xz.108878.xyz/CDlinux.zip',
+          title: 'CDLinux',
           imgsrc: CDlinux,
         },
         {
-          href: "https://www.kali.org/downloads/",
-          title: "Kali Linux",
+          href: 'https://www.kali.org/downloads/',
+          title: 'Kali Linux',
           imgsrc: kail,
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 
 <style>
@@ -101,7 +112,7 @@ export default {
   align-items: center;
   /* 让元素垂直排列 这里就是让包含图片的div和文字垂直排列 */
   flex-direction: column;
-  width: 140px;
+  width: 200px;
   height: 150px;
   margin: 0px;
   /* 鼠标放上去变成小手 */
@@ -125,6 +136,7 @@ export default {
 .container .box .img img {
   width: 60px;
   transition: all 0.2s ease-out;
+  border-radius: 15px;
 }
 .container .box p {
   color: slategrey;
@@ -142,5 +154,27 @@ export default {
 .boximg {
   width: 100px;
   height: 100px;
+}
+@media only screen and (max-width: 450px) {
+  .container .box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* 让元素垂直排列 这里就是让包含图片的div和文字垂直排列 */
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+    /* 鼠标放上去变成小手 */
+    cursor: pointer;
+  }
+  .container {
+    display: flex;
+    /* 让一行中的元素平均分配宽度 */
+    justify-content: space-around;
+    align-items: center;
+    /* 元素在一行放不下时自动换行 */
+    flex-wrap: wrap;
+  }
 }
 </style>

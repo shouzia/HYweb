@@ -42,15 +42,15 @@ export default {
   data() {
     return {
       Navarr: [
-        { Navtitle: "下载", Navhref: "#Download" },
-        { Navtitle: "特性", Navhref: "#Features" },
-        { Navtitle: "文档与技术", Navhref: "#Docs" },
-        { Navtitle: "技术支持", Navhref: "#Technical" },
+        { Navtitle: '下载', Navhref: '#Download' },
+        { Navtitle: '特性', Navhref: '#Features' },
+        { Navtitle: '文档与技术', Navhref: '#Docs' },
+        { Navtitle: '技术支持', Navhref: '#Technical' },
       ],
-      ToNavLink: [{ Navtitle: "首页", Navhref: "/" }],
-    };
+      ToNavLink: [{ Navtitle: '首页', Navhref: '/' }],
+    }
   },
-};
+}
 </script>
 
 <style>
