@@ -46,6 +46,9 @@ export default {
 @media screen and (max-width: 480px) {
   .firstbg {
     min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .max {
     max-width: 1500px;
