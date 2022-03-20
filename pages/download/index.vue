@@ -9,6 +9,13 @@
         <p>{{ item.title }}</p>
       </div>
     </div>
+    <div class="tencent-ad">
+      <a
+        class="tencent-ad-bg"
+        href="https://blog.shouzi.xyz/index.php/2022/03/20/tencet-cloud/"
+      >
+      </a>
+    </div>
   </div>
 </template>
 
@@ -155,6 +162,36 @@ export default {
   width: 100px;
   height: 100px;
 }
+.tencent-ad {
+  width: 1024px;
+  height: 100px;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+}
+.tencent-ad-bg {
+  width: 1024px;
+  height: 100px;
+  display: inherit;
+  background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/1040x100.jpg);
+}
+@media only screen and (max-width: 960px) {
+  .tencent-ad {
+    width: 560px;
+    height: 300px;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+    bottom: 0px;
+  }
+  .tencent-ad-bg {
+    width: 560px;
+    height: 300px;
+    display: inherit;
+    background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/560x300.jpg);
+  }
+}
 @media only screen and (max-width: 450px) {
   .container .box {
     display: flex;
@@ -175,6 +212,20 @@ export default {
     align-items: center;
     /* 元素在一行放不下时自动换行 */
     flex-wrap: wrap;
+  }
+  .tencent-ad {
+    width: 345px;
+    height: 200px;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+    bottom: 0px;
+  }
+  .tencent-ad-bg {
+    width: 345px;
+    height: 200px;
+    display: inherit;
+    background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/345x200-.jpg);
   }
 }
 </style>
