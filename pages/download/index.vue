@@ -14,6 +14,9 @@
         class="tencent-ad-bg"
         href="https://blog.shouzi.xyz/index.php/2022/03/20/tencet-cloud/"
       >
+        <div class="text-ad">
+          <h1>腾讯云优惠汇总</h1>
+        </div>
       </a>
     </div>
   </div>
@@ -163,7 +166,7 @@ export default {
   height: 100px;
 }
 .tencent-ad {
-  width: 1024px;
+  width: 100vw;
   height: 100px;
   transform: translateX(-50%);
   position: absolute;
@@ -171,25 +174,59 @@ export default {
   bottom: 0px;
 }
 .tencent-ad-bg {
-  width: 1024px;
+  width: 100%;
   height: 100px;
   display: inherit;
-  background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/1040x100.jpg);
+  background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/hero_pc-484e1a32b23948c20c7daad977b68bd371426a39-scaled.jpg);
+  background-position: 40% 20%;
+  text-decoration: none;
+}
+.text-ad {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0px 25%;
+}
+.text-ad h1 {
+  font-size: 35px;
+  margin: 0;
+}
+
+.tencent-ad-bg:visited {
+  text-decoration: none;
+  color: #fff;
+}
+.tencent-ad-bg:hover {
+  text-decoration: none;
+  color: #fff;
 }
 @media only screen and (max-width: 960px) {
   .tencent-ad {
-    width: 560px;
-    height: 300px;
+    margin-top: 50px;
+    width: 100vw;
+    height: 100px;
     transform: translateX(-50%);
     position: relative;
     left: 50%;
     bottom: 0px;
   }
   .tencent-ad-bg {
-    width: 560px;
-    height: 300px;
+    width: 100%;
+    height: 100px;
     display: inherit;
-    background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/560x300.jpg);
+    background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/hero_pc-484e1a32b23948c20c7daad977b68bd371426a39-scaled.jpg);
+    background-position: 55% 20%;
+    text-decoration: none;
+  }
+  .text-ad {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0px 25%;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -214,18 +251,33 @@ export default {
     flex-wrap: wrap;
   }
   .tencent-ad {
-    width: 345px;
-    height: 200px;
+    margin-top: 50px;
+    width: 100vw;
+    height: 100px;
     transform: translateX(-50%);
     position: relative;
     left: 50%;
     bottom: 0px;
   }
   .tencent-ad-bg {
-    width: 345px;
-    height: 200px;
+    width: 100%;
+    height: 100px;
     display: inherit;
-    background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/345x200-.jpg);
+    background: url(https://blog.shouzi.xyz/wp-content/uploads/2022/03/hero_pc-484e1a32b23948c20c7daad977b68bd371426a39-scaled.jpg);
+    background-position: 55% 20%;
+    text-decoration: none;
+  }
+  .text-ad {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .text-ad h1 {
+    font-size: 25px;
+    margin: 0;
   }
 }
 </style>
